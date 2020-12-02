@@ -17,7 +17,7 @@ public class homeworkLesson3 {
     }
 
        private static void gameRiddle() {
-
+        enterDigit();
         compareDigit();
         repeatGame();
     }
@@ -30,12 +30,9 @@ public class homeworkLesson3 {
 
 
     private static void enterDigit() {
-
-
-
-
-
-
+        for (int i = 0; i < 3; i++);{
+            compareDigit();
+        }
     }
 
     public static void compareDigit() {
@@ -43,38 +40,45 @@ public class homeworkLesson3 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Угадайте число");
         int printedDigit = scanner.nextInt();
-        scanner.close();
 
+        if (printedDigit == digit){
+            System.out.println("Отлично!");
+
+        } repeatGame();
         if (printedDigit < digit); {
         System.out.println("Не угадали. Ваше число меньше задуманного.");
         }
+        compareDigit();
         if (printedDigit > digit); {
         System.out.println("Не угадали. Ваше число больше задуманного.");
         }
-        if (printedDigit == digit){
-            System.out.println("Отлично!");
+        compareDigit();
+
+
+    }
+    private static void repeatGame() {
+        while (true) {
+            System.out.println("Повторить игру ещё раз? 1 - да / 0 - нет" );
+            chooseAction();
+        }
+    }
+
+    private static void chooseAction() {
+        Scanner sc = new Scanner(System.in);
+        String in = sc.next();
+        switch(in) {
+            case "1":
+                enterDigit();
+                break;
+            case "0":
+                doExit();
+                break;
         }
 
     }
-        private static void repeatGame() {
-                while (true) {
-            System.out.println("Повторить игру ещё раз? 1 - да / 0 - нет" );
-            chooseAction();
-               }
-        }
-
-            private static void chooseAction() {
-                switch(in.next) {
-                    case "1":
-                        enterDigit();
-                    case "0":
-                        doExit();
-                }
-
-            }
-            private static void doExit() {
-                System.exit(0);
-            }
+    private static void doExit() {
+        System.exit(0);
+    }
 
 
 
